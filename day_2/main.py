@@ -46,3 +46,9 @@ def filter_possible(pair):
 
 possible_games = dict(filter(filter_possible, result.items()))
 print("All possible game id's summed up:", sum(possible_games.keys()))
+
+sum_power_of_minimum_sets = 0
+for set in result.values():
+    sum_power_of_minimum_sets += set[0] * set[1] * set[2]
+
+print("All powers of the minimum set per game summed up:", sum_power_of_minimum_sets)
