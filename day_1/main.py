@@ -1,4 +1,4 @@
-data = open('./data.txt').read()
+data = open('./day_1/data.txt').read()
 
 def calibrate(input):
     sum = 0

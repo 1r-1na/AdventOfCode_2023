@@ -1,4 +1,4 @@
-data = open('./data.txt').readlines()
+data = open('./day_2/data.txt').readlines()
 
 max_red = 12
 max_green = 13
