@@ -52,23 +52,23 @@ def is_part_number(number_positions: list, lines: np.array, isFirstLine = False,
 part_numbers_sum = 0
 
 # index for a line
-for i in range(len(data)):
+for i, line in enumerate(data):
     positions = []
     number_detected = False
-    for j in range(len(data[i])):
+    for j, character in enumerate(line):
         if number_detected:
             part_number = False
             if i == 0:
-                part_number = is_part_number(positions, np.array([data[i], data[i + 1]]), isFirstLine=True)
+                part_number = is_part_number(positions, np.array([line, data[i + 1]]), isFirstLine=True)
             elif i == len(data) - 1:
-                part_number = is_part_number(positions, np.array([data[i - 1], data[i]]), isLastLine=True)
+                part_number = is_part_number(positions, np.array([data[i - 1], line]), isLastLine=True)
             else:
-                part_number = is_part_number(positions, np.array([data[i - 1], data[i], data[i + 1]]))
+                part_number = is_part_number(positions, np.array([data[i - 1], line, data[i + 1]]))
             if part_number:
-                part_numbers_sum += int(data[i][positions[0]:(positions[-1]+1)])
+                part_numbers_sum += int(line[positions[0]:(positions[-1]+1)])
             number_detected = False
             positions = []
-        if data[i][j].isdigit():
+        if character.isdigit():
             positions.append(j)
         elif len(positions) > 0:
            number_detected = True
