@@ -1,6 +1,6 @@
 import math
 
-data = open('./data.txt').readlines()
+data = open('./day_3/data.txt').readlines()
 
 numbers = []
 stars = []
@@ -21,7 +21,7 @@ for line_index, line in enumerate(data):
             char_positions = []
 
 
-offsets = [[-1, -1], [-1, 0], [-1, 1], [1, -1], [1, 0], [1, 1]]
+offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
 
 gear_ratio_total = 0
 
@@ -38,12 +38,6 @@ for star_pos in stars:
         gear_ratio_total += math.prod(possible_gear_numbers.values())
     possible_gear_numbers = {}
 
-print("Gear ratio total:", gear_ratio_total)
-
-#12409965
-#85155778 too low
-#68208793
-#68208793
-
+print("Gear ratio total:", gear_ratio_total) # 87449461
 
 

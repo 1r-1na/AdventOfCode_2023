@@ -1,4 +1,4 @@
-data = open('./data.txt').readlines()
+data = open('./day_3/data.txt').readlines()
 
 
 def is_part_number(positions_to_check: list, lines: list, on_left: bool, on_right: bool):
@@ -43,4 +43,4 @@ for line_index, line in enumerate(data):
                 part_numbers_sum += int(n)
             positions.clear()
 
-print("Sum of all part numbers:", part_numbers_sum)
+print("Sum of all part numbers:", part_numbers_sum) # 546312
