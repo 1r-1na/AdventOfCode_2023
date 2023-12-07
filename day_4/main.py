@@ -29,4 +29,4 @@ for line in data:
                 point = 1
     total += point
 
-print("Points worth in total:", total)
+print("Points worth in total:", total) # 26346
